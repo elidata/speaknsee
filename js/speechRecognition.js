@@ -8,7 +8,7 @@ function Speech() {
     // settings
     this.recognition.continuous = false; // stop automatically
     this.recognition.lang = "en-US" ;
-    this.regognition.lang = "he" ;
+   // this.regognition.lang = "he" ;
     this.recognition.interimResults = true;
 
     this.startCapture = function() {
