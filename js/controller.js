@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 	console.log('Starting SpeechRecognition library.');
+	var mylang = $('#mylang').value() ;
+	console.log('Language is'+ mylang) ;
 	var speech = new Speech();
 
     speech.recognition.onstart = function() {
