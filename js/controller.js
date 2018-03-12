@@ -2,7 +2,7 @@ $( document ).ready(function() {
 	console.log('Starting SpeechRecognition library.');
 	var mylang = $('#mylang').value() ;
 	console.log('Language is'+ mylang) ;
-	var speech = new Speech();
+	var speech = new Speech(mylang);
 
     speech.recognition.onstart = function() {
 		$('#capture').text("Stop");
