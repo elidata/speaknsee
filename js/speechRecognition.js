@@ -23,7 +23,13 @@ function Speech(mylang) {
     }
 
     this.recognition.onresult = function(event) {
-      console.log(event.results[0][0].transcript);
+      var  res = event.results[0][0].transcript);
+      console.log(res);
+      res = res.split(' ');
+      for (I=0; i< res.size(); i++) {
+      	console.log(res[i]) ;
+      }
+		
       $('#output').text(event.results[0][0].transcript);      
     }
 
