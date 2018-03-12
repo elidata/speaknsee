@@ -9,7 +9,7 @@
                 list-style: none;
             };
         </style>
-        <script src="http://code.jquery.com/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://code.jquery.com/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">
             $(function(){
                 var opts = {
@@ -22,7 +22,7 @@
                     format: 'json',
                     nojsoncallback: 1
                 };
-                $.get('http://api.flickr.com/services/rest/', opts, function(resp){
+                $.get('https://api.flickr.com/services/rest/', opts, function(resp){
                     var images;
                     if (resp.stat === "ok") {
                         images = $('<ul>', {'class': 'gallery'})
