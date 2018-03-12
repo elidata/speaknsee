@@ -1,4 +1,4 @@
-function Speech() {
+function Speech(mylang) {
   if ('webkitSpeechRecognition' in window) {
     // creating voice capture object
     //this.recognition = new webkitSpeechRecognition();
@@ -7,7 +7,9 @@ function Speech() {
 
     // settings
     this.recognition.continuous = false; // stop automatically
-    this.recognition.lang = "en-US" ;
+    this.recognition.languageCode = mylang;
+    console.log(" inside speech() lang is "+ mylang) ;
+	  //this.recognition.lang = "en-US" ;
 	  // why doesn't it like hebrew
    // this.regognition.lang = "he-IL" ;
     this.recognition.interimResults = true;
