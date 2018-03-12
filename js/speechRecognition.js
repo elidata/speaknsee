@@ -23,7 +23,7 @@ function Speech(mylang) {
     }
 
     this.recognition.onresult = function(event) {
-      var  res = event.results[0][0].transcript);
+      var  res = event.results[0][0].transcript;
       console.log(res);
       res = res.split(' ');
       for (I=0; i< res.size(); i++) {
