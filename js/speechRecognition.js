@@ -26,7 +26,7 @@ function Speech(mylang) {
       var  res = event.results[0][0].transcript;
       console.log(res);
       res = res.split(' ');
-      for (I=0; i< res.size(); i++) {
+      for (var i=0; i< res.size; i++) {
       	console.log(res[i]) ;
       }
 		
