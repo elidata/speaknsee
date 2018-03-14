@@ -7,12 +7,13 @@ function Speech(mylang) {
 
     // settings
     this.recognition.continuous = false; // stop automatically
+	this.recognition.continouus = 
     this.recognition.languageCode = mylang;
     console.log(" inside speech() lang is "+ mylang) ;
 	  //this.recognition.lang = "en-US" ;
 	  // why doesn't it like hebrew
-   // this.regognition.lang = "he-IL" ;
-    this.recognition.interimResults = true;
+    this.recognition.lang = "he-IL" ;
+    this.recognition.interimResults = false;
 
     this.startCapture = function() {
       this.recognition.start();
@@ -22,15 +23,20 @@ function Speech(mylang) {
       this.recognition.stop();
     }
 
+	var i=0;
     this.recognition.onresult = function(event) {
       var  res = event.results[0][0].transcript;
       console.log(res);
       res = res.split(' ');
-      for (var i=0; i< res.size; i++) {
-      	console.log(res[i]) ;
-      }
 		
-      $('#output').text(event.results[0][0].transcript);      
+      $('#output0').text(res[0]);
+	  $('#output1').text(res[1]);    
+	  $('#output2').text(res[2]);       
+	  $('#output3').text(res[3]); 
+	  getPhoto(res[0]);
+	  getPhoto(res[1]);
+	  getPhoto(res[2]);
+	  getPhoto(res[3]);
     }
 
     this.recognition.onerror = function(event) {
