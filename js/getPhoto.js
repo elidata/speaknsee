@@ -14,14 +14,15 @@ function getPhoto(ptext){
 	$.get('https://api.flickr.com/services/rest/', opts, function(resp){
 		var images;
 		if (resp.stat === "ok") {
-			images = $('<ul>', {'class': 'gallery'})
+			images = $('<row>', {'class': 'gallery'})
 			$.each(resp.photos.photo, function(index, value){
-				var image = $('<li>', {
+				var image = $('<column>', {
 					'class': 'gallery__item'
 				}).append($('<img>', {
 					src: value.url_m,
-					title: value.title,
-					height: '100px',
+					//title: value.title,
+					title: ptext,
+					height: '200px',
 				})).appendTo(images);
 			});
 			images.appendTo('body');

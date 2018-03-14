@@ -2,28 +2,48 @@
 <html lang="he-IL">
 <head>
 <style>
+textarea {
+		font-size: 20px;
+		font-weight: bold ;
+}
+button {
+		font-size: 30px;
+		background: yellow;
+}
+
+select {
+		font-size: 20px ;
+		background: lightgreen;
+}
+
 body {
     background-color: lightblue;
 }
 
 h1 {
-    color: white;
+    color: black;
     text-align: center;
+	font-size: 50px;
 }
 
 p {
     font-family: david;
     font-size: 40px;
 }
+.title {
+	text-align: center;
+	font-family: Miriam;
+	font-size: 50px;
+	
+}
+
 	</style>
-	<title>זיהוי שפמSpeech Recognition</title>
+	<h1>לוח תקשורת - SpeakNSee</>
 	<meta charset="UTF-16">
-	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
-
+   
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -37,35 +57,34 @@ p {
   <script type="text/javascript" src="/js/speechRecognition.js"></script>
    <script type="text/javascript" src="/js/getPhoto.js"></script>
   <script type="text/javascript" src="/js/controller.js"></script>
-</head>
-<body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+	</head>
+<body>
 <div class="container-fluid">
   <p>
    <button id="capture" value="true">התחל</button>
    <span>מצב: </span>
-   <span id="status">ישן</span>
-   <br><br>
-<select name="mylang">
-  <option value="en-US">English</option>
+   <span id="status">Idle</span>
+<select name="lang_menu">
   <option value="he-IL">Hebrew</option>
+  <option value="en-US">English</option>
   <option value="sp-ES">Spanish</option>
 </select>
 <br>
-Result:<textarea id="output0" rows=1 cols=20 placeholder="result"></textarea>
- <textarea id="output1" rows=1 cols=20 placeholder="result"></textarea>
-<textarea id="output2" rows=1 cols=20 placeholder="result"></textarea>
-<textarea id="output3" rows=1 cols=20 placeholder="result"></textarea>
+<textarea id="output0" rows=1 cols=10 placeholder="result"></textarea>
+<textarea id="output1" rows=1 cols=11 placeholder="result"></textarea>
+<textarea id="output2" rows=1 cols=10 placeholder="result"></textarea>
+<textarea id="output3" rows=1 cols=10 placeholder="result"></textarea>
  </p>
  </div>
  <div class="container-fluid">
 Pictures
   <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-<div class="row show-grid">
-  <row class="col-md-4"><</row><row class="col-md-4">.col-md-4</row><row class="row-md-4">.col-md-4</row>
-</div>
+  
+  </div>
 </div>
 </body>
 </html>

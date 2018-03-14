@@ -1,6 +1,13 @@
+function qs(key) {
+    key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+    var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+    return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+}
+
 $( document ).ready(function() {
 	console.log('Starting SpeechRecognition library.');
 	var mylang = 'he-IL'; //$('#mylang').value ;
+	mylang=qs("lang") ;
 	console.log('Language is'+ mylang) ;
 	var speech = new Speech(mylang);
 
@@ -8,6 +15,7 @@ $( document ).ready(function() {
 		$('#capture').text("Stop");
 		$('#capture').val("false");
 		$('#status').text("Listening...");
+		$('#pictures').clear;
     	console.log('Listening started...');
     }
 
