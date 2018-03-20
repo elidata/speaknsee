@@ -23,7 +23,7 @@ function getPhoto(ptext){
 					//title: value.title,
 					title: ptext,
 					height: '200px',
-				})).appendTo(images);
+				})).appendTo(pictures);
 			});
 			images.appendTo('body');
 		}

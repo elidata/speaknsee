@@ -26,8 +26,12 @@ $( document ).ready(function() {
     	console.log('Listening stopped.');
     }
 	
-	
-	$('#capture').click(function(){
+	$('#refresh').click(function() {
+		$('#pictures').html("Pictures");
+	});
+
+
+	$('#capture').click(function() {
 		if ($('#capture').val() == "true") {
 			speech.startCapture();
 		}
@@ -35,9 +39,4 @@ $( document ).ready(function() {
 			speech.stopCapture();
 		}
 	});
-	
-	$('#refresh').click(function() {
-		$('#pictures').html("");
-	});
-
 });
