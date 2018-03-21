@@ -2,6 +2,8 @@ function Speech(mylang) {
   if ('webkitSpeechRecognition' in window) {
     // creating voice capture object
     //this.recognition = new webkitSpeechRecognition();
+	//var SpeechRecognition = require("nativescript-speech-recognition").SpeechRecognition;
+
 	this.recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
 
 
@@ -14,10 +16,16 @@ function Speech(mylang) {
 	  // why doesn't it like hebrew
     this.recognition.lang = "he-IL" ;
     this.recognition.interimResults = false;
+	var granted = false ;
 
     this.startCapture = function() {
       this.recognition.start();
-    }
+	  if (0) { //granted == false) {
+		granted = this.recognition.requestPermission();
+		console.log("Granted? " + granted);
+		}
+	  granted = true ;
+	 }
 
     this.stopCapture = function() {
       this.recognition.stop();
