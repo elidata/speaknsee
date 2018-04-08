@@ -1,0 +1,20 @@
+{
+  "name": "obvi",
+  "version": "3.0.0",
+  "main": "index.js",
+  "description": "One Button for Voice Input",
+  "repository": "https://github.com/googlecreativelab/obvi",
+  "author": "Nick Jonas <njonas@google.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "preversion": "npm test",
+    "version": "npm run build && git add -A build",
+    "postversion": "git push && git push --tags",
+    "start": "polymer serve --protocol h2 --open",
+    "build": "polymer build --js-minify --css-minify --html-minify --bundle --name dist --entrypoint voice-button.html",
+    "test": "polymer test"
+  },
+  "devDependencies": {
+    "polymer-cli": "^1.5.7"
+  }
+}
